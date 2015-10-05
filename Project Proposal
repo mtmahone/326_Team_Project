@@ -1,0 +1,33 @@
+Roles of Team Members:
+
+Christopher Afonso - 
+Charlie Wongwajarachot -
+Matthew Mahoney -
+Qiwen Wang - 
+Senh Wang - 
+
+Web App Description: A web app that aggregates stock information from various
+
+sources, (Yahoo Finance, Google Finance, Tradingview.com, Barchart.com, 
+
+Stocktwits) and can provide ratings for stocks based on alternate sources of 
+
+incoming data.
+
+Timeline:
+
+10/29: Preliminary research due
+
+11/18: Design due
+
+12/10: Implementation due
+
+Preliminary Research:
+•	How to collect stock information numerically
+•	How to mathematically aggregate stock information
+
+Design:
+•	
+
+Implementation:
+•	
