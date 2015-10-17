@@ -1,0 +1,21 @@
+{
+  "name": "02-basic-app",
+  "version": "1.0.0",
+  "description": "02 Basic Expression Application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1"
+  },
+  "devDependencies": {
+    "archiver": "^0.15.1",
+    "chai": "^3.3.0",
+    "fs-extra": "^0.24.0",
+    "mocha": "^2.3.3"
+  }
+}
