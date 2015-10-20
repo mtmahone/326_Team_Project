@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Team Project</title>
+		<!-- We are conditionally including test support if the showTests
+         variables has been set. -->
+		{{#if showTests}}
+			<link rel="stylesheet" href="/vendor/mocha.css">
+		{{/if}}
+
+		<!-- We add the jQuery library because we will be using it
+		     to manipulate HTML in the browser. -->
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+	</head>
+	<body>
+		<img src="/img/logo.png" alt="Meadowlark Travel" />
+		{{{body}}}
+
+		{{#if showTests}}
+			<div id="mocha"></div>
+			<script src="/vendor/mocha.js"></script>
+			<script src="/vendor/chai.js"></script>
+			<script>
+				mocha.ui('tdd');
+				var assert = chai.assert;
+			</script>
+
+			<script src="/qa/tests-global.js"></script>
+			{{#if pageTestScript}}
+				<script src="{{pageTestScript}}"></script>
+			{{/if}}
+			<script>mocha.run();</script>
+		{{/if}}
+	</body>
+</html>
