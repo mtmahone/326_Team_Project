@@ -80,6 +80,10 @@ app.get('/', (req, res) => {
   }
 });
 
+app.get('/about',(req,res)=>{
+   res.send('this is umass stock analyzer, you want to use this shit because(someone finish it)')
+});
+
 app.get('/team/jdoe', (req, res) => {
   // TODO
   var result = team.one('jdoe');
