@@ -66,31 +66,10 @@ app.use(testmw);
 ///// User Defined Routes ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 var team = require('./lib/team.js');
-  var result = team.all();
-  //console.log(result);
-  
-for(var a of result.data){
-  //console.log(a.user);
-  
-  app.get('/team/'+a.user, (req, res) => {
-  // TODO
-  var result = team.one(a.user);
-  if (!result.success) {
-    notFound404(req, res);
-  } else {
-    res.render('team', {
-      members: result.data,
-      pageTestScript: '/qa/tests-team.js'
-    });
-  }
-});
-  
-}
-  
+
 app.get('/', (req, res) => {
   // TODO
   var result = team.all();
-  //console.log(result);
   if (!result.success) {
     notFound404(req, res);
   } else {
@@ -101,7 +80,6 @@ app.get('/', (req, res) => {
   }
 });
 
-/*
 app.get('/team/jdoe', (req, res) => {
   // TODO
   var result = team.one('jdoe');
@@ -114,8 +92,71 @@ app.get('/team/jdoe', (req, res) => {
     });
   }
 });
-*/
 
+app.get('/team/qwang', (req, res) => {
+  // TODO
+  var result = team.one('qwang');
+if (!result.success) {
+  notFound404(req, res);
+} else {
+  res.render('team', {
+    members: result.data,
+    pageTestScript: '/qa/tests-team.js'
+  });
+}
+});
+
+app.get('/team/cwongwajarachot', (req, res) => {
+  // TODO
+  var result = team.one('cwongwajarachot');
+if (!result.success) {
+  notFound404(req, res);
+} else {
+  res.render('team', {
+    members: result.data,
+    pageTestScript: '/qa/tests-team.js'
+  });
+}
+});
+
+app.get('/team/swang', (req, res) => {
+  // TODO
+  var result = team.one('swang');
+if (!result.success) {
+  notFound404(req, res);
+} else {
+  res.render('team', {
+    members: result.data,
+    pageTestScript: '/qa/tests-team.js'
+  });
+}
+});
+
+app.get('/team/cafonoso', (req, res) => {
+  // TODO
+  var result = team.one('cafonoso');
+if (!result.success) {
+  notFound404(req, res);
+} else {
+  res.render('team', {
+    members: result.data,
+    pageTestScript: '/qa/tests-team.js'
+  });
+}
+});
+
+app.get('/team/mmahoney', (req, res) => {
+  // TODO
+  var result = team.one('mmahoney');
+if (!result.success) {
+  notFound404(req, res);
+} else {
+  res.render('team', {
+    members: result.data,
+    pageTestScript: '/qa/tests-team.js'
+  });
+}
+});
 
 
 //////////////////////////////////////////////////////////////////////
