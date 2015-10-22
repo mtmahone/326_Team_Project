@@ -81,7 +81,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about',(req,res)=>{
-   res.send('this is umass stock analyzer, you want to use this shit because(someone finish it)')
+   res.sendFile(__dirname + '/public/html/about.html')
 });
 
 app.get('/team/jdoe', (req, res) => {
@@ -136,9 +136,9 @@ if (!result.success) {
 }
 });
 
-app.get('/team/cafonoso', (req, res) => {
+app.get('/team/cafonso', (req, res) => {
   // TODO
-  var result = team.one('cafonoso');
+  var result = team.one('cafonso');
 if (!result.success) {
   notFound404(req, res);
 } else {
