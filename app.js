@@ -121,7 +121,7 @@ app.get('/team', (req, res) => {
 });
 
 app.get('/about', (req,res)=>{
-   res.sendFile('/about', (__dirname, '/public/aboutpage/about.html'))
+   res.sendFile((__dirname + '/public/aboutpage/about.html'))
 });
 
 
