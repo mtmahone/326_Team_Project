@@ -36,6 +36,7 @@ app.set('view engine', 'handlebars');
 // matches. We use the __dirname special variable which indicates the
 // directory this server is running in and append it to '/public'.
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/aboutpage'));
 
 // The `testmw` function represents out testing middleware. We use
 // this in our views to conditionally include the Mocha and Chai
@@ -120,7 +121,7 @@ app.get('/team', (req, res) => {
 });
 
 app.get('/about', (req,res)=>{
-   res.send('this is umass stock analyzer, you want to use this shit because(someone finish it)')
+   res.sendFile('/about', (__dirname, '/public/aboutpage/about.html'))
 });
 
 
