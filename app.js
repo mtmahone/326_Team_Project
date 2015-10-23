@@ -80,13 +80,9 @@ app.get('/', (req, res) => {
   }
 });
 
-app.get('/about',(req,res)=>{
-   res.sendFile(__dirname + '/public/html/about.html')
-});
-
-app.get('/team/jdoe', (req, res) => {
+/*app.get('/team', (req, res) => {
   // TODO
-  var result = team.one('jdoe');
+  var result = team.all();
   if (!result.success) {
     notFound404(req, res);
   } else {
@@ -95,71 +91,36 @@ app.get('/team/jdoe', (req, res) => {
       pageTestScript: '/qa/tests-team.js'
     });
   }
+});*/
+
+
+app.get('/team', (req, res) => {
+  // TODO
+  var user = req.query['user'];
+  if (user === undefined) {  
+    var result = team.all();
+  } else {
+    var result = team.one(user);
+  }
+  if (!result.success) {
+    notFound404(req, res);
+  } else {
+    if (user === undefined) {
+      res.render('team', {
+        members: result.data,
+        pageTestScript: '/qa/tests-team.js'
+      });
+    } else {
+      res.render(user, {
+        member: result.data,
+        pageTestScript: '/qa/tests-team.js'
+      });
+    }
+  }
 });
 
-app.get('/team/qwang', (req, res) => {
-  // TODO
-  var result = team.one('qwang');
-if (!result.success) {
-  notFound404(req, res);
-} else {
-  res.render('team', {
-    members: result.data,
-    pageTestScript: '/qa/tests-team.js'
-  });
-}
-});
-
-app.get('/team/cwongwajarachot', (req, res) => {
-  // TODO
-  var result = team.one('cwongwajarachot');
-if (!result.success) {
-  notFound404(req, res);
-} else {
-  res.render('team', {
-    members: result.data,
-    pageTestScript: '/qa/tests-team.js'
-  });
-}
-});
-
-app.get('/team/swang', (req, res) => {
-  // TODO
-  var result = team.one('swang');
-if (!result.success) {
-  notFound404(req, res);
-} else {
-  res.render('team', {
-    members: result.data,
-    pageTestScript: '/qa/tests-team.js'
-  });
-}
-});
-
-app.get('/team/cafonso', (req, res) => {
-  // TODO
-  var result = team.one('cafonso');
-if (!result.success) {
-  notFound404(req, res);
-} else {
-  res.render('team', {
-    members: result.data,
-    pageTestScript: '/qa/tests-team.js'
-  });
-}
-});
-
-app.get('/team/mmahoney', (req, res) => {
-  // TODO
-  var result = team.one('mmahoney');
-if (!result.success) {
-  notFound404(req, res);
-} else {
-  res.render('team', {
-    members: result.data,
-    pageTestScript: '/qa/tests-team.js'
-  });
-}
+app.get('/about', (req,res)=>{
+   res.send('this is umass stock analyzer, you want to use this shit because(someone finish it)')
 });
 
 
