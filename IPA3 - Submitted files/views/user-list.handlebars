@@ -1,0 +1,47 @@
+<h1>User List</h1>
+<div>{{message}}</div>
+<table>
+  <tr>
+    <td>
+      User ID
+    </td>
+    <td>
+      Name
+    </td>
+    <td>
+      Password
+    </td>
+    <td>
+      Admin
+    </td>
+  </tr>
+  {{#each users}}
+    <tr>
+      <td>
+        {{uid}}
+      </td>
+      <td>
+        {{name}}
+      </td>
+      <td>
+        {{pass}}
+      </td>
+      <td>
+        {{admin}}
+      </td>
+    </tr>
+  {{/each}}
+</table>
+
+<h4>Add a New User</h4>
+<form method="post" action="/admin/user">
+  User Name: <input type="text" name="name"> <br>
+  Password:  <input type="password" name="pass"> <br>
+  Admin:
+    <select name="admin">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    <br>
+  <button>Add User</button>
+</form>
