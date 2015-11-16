@@ -9,8 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "archiver": "^0.16.0",
+    "body-parser": "^1.14.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
-    "express-handlebars": "^2.0.1"
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.11.2",
+    "fs-extra": "^0.26.0",
+    "morgan": "^1.6.1"
   },
   "devDependencies": {
     "archiver": "^0.15.1",
