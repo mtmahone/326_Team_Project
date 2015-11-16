@@ -12,7 +12,7 @@ After cloning the repository, do npm install to install package.json dependencie
 ##How To Run
 
  1. To clone repo: `git clone https://github.com/mtmahone/326_Team_Project.git`
- 2. Execute using: `node app.js` from the root of the project
+ 2. Execute using: `node app.js` from the root of the project or using the provided run script `./runscript.sh`
 
 ##Libraries
 
