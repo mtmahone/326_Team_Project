@@ -131,4 +131,22 @@ router.get('/online', function(req, res) {
   }
 });
 
+// Renders the users that are online.
+router.get('/user_profile', function(req, res) {
+  // Grab the user session if it exists:
+  var user = req.session.user;
+
+  // If no session, redirect to login.
+  if (!user) {
+    req.flash('login', 'Not logged in');
+    res.redirect('/user/login');
+  }
+  else {
+    res.render('user_profile', {
+      title : 'User Profile',
+      sessionuser : user
+    });
+  }
+});
+
 module.exports = router;
