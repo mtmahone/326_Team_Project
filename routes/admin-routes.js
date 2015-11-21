@@ -56,7 +56,7 @@ router.get('/list', (req, res) => {
   
   //var userOnlineFlag = false; //temp
   
-  if(userObject && (online[userObject.name]==undefined)){ //add in once you know. double check this.  
+  else if(userObject && (online[userObject.name]==undefined)){ //add in once you know. double check this.
     //if user sess object and exists in online db
     console.log(userObject);
     console.log(online);
@@ -65,8 +65,8 @@ router.get('/list', (req, res) => {
     res.redirect('/user/login');
   }
   
-  console.log(userObject.admin); //logs admin bool
-  if(!userObject.admin){ //not admin
+  //console.log(userObject.admin); //logs admin bool
+  else if(!userObject.admin){ //not admin
     console.log('we hit the admin false condition');
     req.flash('main', 'user needs admin credentials to access this route');
     res.redirect('/user/main');
@@ -75,7 +75,7 @@ router.get('/list', (req, res) => {
   //if user online /logged in /admin, retrieve list of users from user.js instance,
   //pass along the list to the render of user-list, passing a message from a flash.
   //message only happens on failed user add because of pre-existing in db from userlist.
-  if(userObject && (online[userObject.name]!=undefined) && userObject.admin){
+  else if(userObject && (online[userObject.name]!=undefined) && userObject.admin){
     console.log('we hit the login condition, the online, and admin');
     model.list(function(error, userList) {
     var message = req.flash('list') || 'user already exists in db';
@@ -84,6 +84,10 @@ router.get('/list', (req, res) => {
       message: message
     });
     }); //THIS IS  THE MODEL CALL FIXXXXXXX THTISISISISISISS... seems maybe fixed.
+  }
+else{
+    req.flash('login', 'Not logged in');
+    res.redirect('/user/login');
   }
 
 
