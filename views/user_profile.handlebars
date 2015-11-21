@@ -1,25 +1,37 @@
 <h1>User Profile</h1>
 
-<h2>{{member.user}}'s User Profile</h2>
+<h2>{{sessionuser.name}}'s User Profile</h2>
+
 <ul>
-  <li><strong>{{member.fname}} {{member.lname}}</strong> - {{member.year}}</li>
-  <img src={{member.img}} alt="Christopher Afonso" />
-  <p>Chris is a Computer Science major attending the University of Massachusetts - Amherst. He is in charge of UI development. He enjoys hacking around with various hardware and software projects in his spare time. My Background is mainly in C-Type languages, using an object-oriented paradigm.</p>
-  <br>The majority of the </br>
-  <h1>Current Contributions</h1>
-  <p><ul>
-<li>About Page and associated route handling</li>
-<li>More to come.</li>
-</ul>
-</ul>
+  <li><br>Username:</br><strong>{{sessionuser.name}}</strong></li>
+  <p>Profile Image</p>
+  <img src={{sessionuser.img}} alt="User Profile Image" />
+  <h1>Watchlist Items</h1>
+    {{#each sessionuser.watchlist}}
+      <br>Ticker:{{this.ticker}}</br>
+      <br>Company Name:{{this.companyname}}</br>
+      <br>Graph: 
+    {{/each}}
+  <p>
+<ul>
+
+<h4>Add a watchlist Item</h4>
+<form method="post" action="/admin/user">
+  Ticker: <input type="text" name="ticker"> <br>
+    <br>
+  <button>Add Ticker</button>
+</form>
+  
 
 <!-- Comments
+You will have to modify the post action perhaps.
+Don't forget that these fields need to be added to user.js
 What are we adding here? (Page will contain what?)
 Properties to be displayed: 
-Watchlist -> stocks to persist
-Names
-Profile image
-related news events
+Watchlist -> stocks to persist -> to be stored in DB
+Name -> User Information
+Relevant Chart -> pulled from (https://www.tradingview.com/widget/) via iframe.
+related stock data (this will come via external api's)
 Other items
 
 -->

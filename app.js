@@ -109,6 +109,8 @@ app.use(morgan('combined'));
 //////////////////////////////////////////////////////////////////////
 var team = require('./lib/team.js');
 
+/* Old root route - from TPA2
+
 app.get('/', (req, res) => {
   // TODO
   var result = team.all();
@@ -121,7 +123,7 @@ app.get('/', (req, res) => {
     });
   }
 });
-
+*/
 /*app.get('/team', (req, res) => {
   // TODO
   var result = team.all();
