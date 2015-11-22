@@ -170,7 +170,8 @@ router.post('/user', (req, res) => {
     var userToAdd = {
       name : req.body.name,
       pass : req.body.pass,
-      admin : (req.body.admin == "yes") ? true : false //this assignment should keep the true and false stuff right
+      admin : (req.body.admin == "yes") ? true : false, //this assignment should keep the true and false stuff right
+      stocks : [] //you initialize with blank watchlist.
     }
     model.add(userToAdd,function(error, user) {
       if(error){
@@ -178,6 +179,7 @@ router.post('/user', (req, res) => {
         res.redirect('/admin/list');
       }
       if(!error){
+        //console.log("user added:"+user);
         req.flash('list', 'user has been added');
         res.redirect('/admin/list');
       }
