@@ -68,6 +68,12 @@ router.post('/auth', (req, res) => {
   }
 });
 
+//a post route for password changes.
+/*router.post('/changepass', (req, res) => {
+  
+}*/
+
+
 // Performs logout functionality - it does nothing!
 router.get('/logout', function(req, res) {
   // Grab the user session if logged in.
