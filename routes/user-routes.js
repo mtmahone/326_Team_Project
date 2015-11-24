@@ -91,8 +91,9 @@ router.get('/logout', function(req, res) {
     delete req.session.user;
   }
 
-  // Redirect to login regardless.
-  res.redirect('/user/login');
+  // Redirect to logout page
+  var message = req.flash('logout') || '';
+  res.render('logout', { title   : 'User Logout'});
 });
 
 // Renders the main user view.
