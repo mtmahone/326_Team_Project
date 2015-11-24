@@ -47,8 +47,7 @@ After cloning the repository, do npm install to install package.json dependencie
   *
  4. user_profile -> contributed by:
   *
- 5. logout -> contributed by:
-  *
+ 5. logout -> contributed by: Charlie Wongwajarachot
 
 
 ##Statefulness
