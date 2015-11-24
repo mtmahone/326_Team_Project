@@ -78,11 +78,11 @@ router.get('/list', (req, res) => {
   else if(userObject && (online[userObject.name]!=undefined) && userObject.admin){
     console.log('we hit the login condition, the online, and admin');
     model.list(function(error, userList) {
-    var message = req.flash('list') || 'user already exists in db';
-    res.render('user-list', {
-      users : userList,
-      message: message
-    });
+      var message = req.flash('list') || 'user already exists in db';
+      res.render('user-list', {
+        users : userList,
+        message: message
+      });
     }); //THIS IS  THE MODEL CALL FIXXXXXXX THTISISISISISISS... seems maybe fixed.
   }
 else{
