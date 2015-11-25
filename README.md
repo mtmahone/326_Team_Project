@@ -38,15 +38,17 @@ This application is intended for the at home investor who is looking to maximize
 ##Views
 
  1. admin -> contributed by: Senh Wang
-  *
+  * This admin view provides a list of users that the admin can edit, as well as adding a new user to the database.
+  (https://github.com/mtmahone/326_Team_Project/blob/master/views/user-list.handlebars)
  2. homepage -> contributed by: Qiwen Wang
-  *
+  * The homepage displays the user's stock information.
+  (https://github.com/mtmahone/326_Team_Project/blob/master/views/layouts/main.handlebars)
  3. user_profile -> contributed by: Christopher Afonso
-  *
+  * Displays the user's username and profile image.
+  (https://github.com/mtmahone/326_Team_Project/blob/master/views/user_profile.handlebars)
  4. login -> contributed by: Matthew Mahoney
-    The login view is where users can either register for an account or sign in to our application.
+   * The login view is where users can either register for an account or sign in to our application.
     (https://github.com/mtmahone/326_Team_Project/blob/master/views/login.handlebars)
-  *
  5. logout -> contributed by: Charlie Wongwajarachot
     The logout view is where users will go to after successfully loging out.
     (https://github.com/mtmahone/326_Team_Project/blob/master/views/logout.handlebars)
