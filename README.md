@@ -6,7 +6,10 @@ After cloning the repository, do npm install to install package.json dependencie
 
 ##Overview
 
-This application is intended for the at home investor who is looking to maximize returns by buying quality equities that have been marked with a seal of approval from various stock reviewing entities. Rather than search these sources manually, our aggregation of various content will ensure the biases of single reviewers will be diminished in an overall review, ensuring our users get the best quality information to make investment decisions.
+This application is intended for the at home investor who is looking to maximize returns by buying quality equities that
+ have been marked with a seal of approval from various stock reviewing entities. Rather than search these sources
+ manually, our aggregation of various content will ensure the biases of single reviewers will be diminished in an
+ overall review, ensuring our users get the best quality information to make investment decisions.
 
 ##How To Run
 
@@ -56,12 +59,19 @@ This application is intended for the at home investor who is looking to maximize
 ##Statefulness
 
  1. What we're persisting across sessions
-  * (add items here)
+  * The application keeps track of the state of the user, such as their name, whether they are online, or if they're an
+  admin. All the data needed to maintain statefulness if found in
+  (https://github.com/mtmahone/326_Team_Project/blob/master/lib/user.js), which is then used by
+  (https://github.com/mtmahone/326_Team_Project/blob/master/routes/user-routes.js) and
+  (https://github.com/mtmahone/326_Team_Project/blob/master/routes/admin-routes.js)
 
  2. Relevant Files
-  *we will maintain user attributes with user.js
+  * (https://github.com/mtmahone/326_Team_Project/blob/master/lib/user.js)
+  * (https://github.com/mtmahone/326_Team_Project/blob/master/routes/user-routes.js)
+  * (https://github.com/mtmahone/326_Team_Project/blob/master/routes/admin-routes.js)
 
 ##Persistence
 
  1. We'll be using databases to persist user attributes across sessions
-  *(maybe watchlist items)
+  * The database stores information related to a user's account (name, password, image, admin, stocks). All the data
+  that must be stored can be found in (https://github.com/mtmahone/326_Team_Project/blob/master/lib/user.js)
