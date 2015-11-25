@@ -50,7 +50,7 @@ This application is intended for the at home investor who is looking to maximize
    * The login view is where users can either register for an account or sign in to our application.
     (https://github.com/mtmahone/326_Team_Project/blob/master/views/login.handlebars)
  5. logout -> contributed by: Charlie Wongwajarachot
-    The logout view is where users will go to after successfully loging out.
+   * The logout view is where users will go to after successfully logging out.
     (https://github.com/mtmahone/326_Team_Project/blob/master/views/logout.handlebars)
 
 ##Statefulness
