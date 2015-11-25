@@ -19,6 +19,8 @@ var cookieParser = require('cookie-parser');
 // Morgan for server logging.
 var morgan = require('morgan');
 
+
+
 //////////////////////////////////////////////////////////////////////
 ///// Express App Setup //////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -137,6 +139,9 @@ app.get('/', (req, res) => {
   }
 });*/
 
+// app.get('/', (req,res)=>{
+//    res.sendFile((__dirname + '/index.html'))
+// });
 
 app.get('/team', (req, res) => {
   // TODO
