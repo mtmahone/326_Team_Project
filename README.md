@@ -1,13 +1,12 @@
-# 326_Team_Project -> UMass Stock Analyzer
+##UMass Stock Analyzer
 
-
-This is a test of pushing to the repo, done by Chris.
+Team Swallow presents the UMass Stock Analyzer
 
 After cloning the repository, do npm install to install package.json dependencies
 
 ##Overview
 
- 1. Application Description: This application is intended for the at home investor who is looking to maximize returns by buying quality equities that have been marked with a seal of approval from various stock reviewing entities. Rather than search these sources manually, our aggregation of various content will ensure the biases of single reviewers will be diminished in an overall review, ensuring our users get the best quality information to make investment decisions.
+This application is intended for the at home investor who is looking to maximize returns by buying quality equities that have been marked with a seal of approval from various stock reviewing entities. Rather than search these sources manually, our aggregation of various content will ensure the biases of single reviewers will be diminished in an overall review, ensuring our users get the best quality information to make investment decisions.
 
 ##How To Run
 
@@ -37,18 +36,20 @@ After cloning the repository, do npm install to install package.json dependencie
 
 
 ##Views
-(please edit these with your name)
 
- 1. login -> contributed by:
+ 1. admin -> contributed by: Senh Wang
   *
- 2. homepage -> contributed by:
+ 2. homepage -> contributed by: Qiwen Wang
   *
- 3. admin -> contributed by:
+ 3. user_profile -> contributed by: Christopher Afonso
   *
- 4. user_profile -> contributed by:
+ 4. login -> contributed by: Matthew Mahoney
+    The login view is where users can either register for an account or sign in to our application.
+    (https://github.com/mtmahone/326_Team_Project/blob/master/views/login.handlebars)
   *
  5. logout -> contributed by: Charlie Wongwajarachot
-
+    The logout view is where users will go to after successfully loging out.
+    (https://github.com/mtmahone/326_Team_Project/blob/master/views/logout.handlebars)
 
 ##Statefulness
 
