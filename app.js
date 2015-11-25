@@ -172,6 +172,10 @@ app.get('/about', (req,res)=>{
    res.sendFile((__dirname + '/public/aboutpage/about.html'))
 });
 
+app.get('/login', (req,res)=>{
+    res.sendFile((__dirname + '/public/html/index.html'))
+});
+
 //TPA3 additional routes
 //// Begin User Routes
 
