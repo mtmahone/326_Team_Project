@@ -60,7 +60,7 @@ This application is intended for the at home investor who is looking to maximize
 
  1. What we're persisting across sessions
   * The application keeps track of the state of the user, such as their name, whether they are online, or if they're an
-  admin. All the data needed to maintain statefulness if found in
+  admin. All the data needed to maintain statefulness is found in
   (https://github.com/mtmahone/326_Team_Project/blob/master/lib/user.js), which is then used by
   (https://github.com/mtmahone/326_Team_Project/blob/master/routes/user-routes.js) and
   (https://github.com/mtmahone/326_Team_Project/blob/master/routes/admin-routes.js)
@@ -74,4 +74,5 @@ This application is intended for the at home investor who is looking to maximize
 
  1. We'll be using databases to persist user attributes across sessions
   * The database stores information related to a user's account (name, password, image, admin, stocks). All the data
-  that must be stored can be found in (https://github.com/mtmahone/326_Team_Project/blob/master/lib/user.js)
+  that must be stored can be found in (https://github.com/mtmahone/326_Team_Project/blob/master/lib/user.js). The relevant library
+  for interacting with the MongoDB Database is the Mongoose library which allows for CRUD operations on our database.

@@ -68,10 +68,44 @@ router.post('/auth', (req, res) => {
   }
 });
 
-//a post route for password changes.
-/*router.post('/changepass', (req, res) => {
-  
-}*/
+//a post route for ticker additions.
+//mirrors the add user route
+router.post('/tickeradd', (req, res) => {
+  var userSessionObject = req.session.user;
+  var formVarsExist = typeof(req.body.ticker)!=undefined;
+  //2
+  if (!userSessionObject) {
+    req.flash('login', 'Not logged in');
+    res.redirect('/user/login');
+  }
+  //3
+  if (userSessionObject && !online[userSessionObject.name]) {
+    req.flash('login', 'Login Expired');
+    res.redirect('/user/login')
+  }
+  //5
+  if (userSessionObject && online[userSessionObject.name] && userSessionObject.admin) {
+    console.log(req.body);
+  }
+  //6
+  if(formVarsExist){
+    model.addStock(req.session.user,req.body.ticker,function(error, user) {
+      if(error){
+        req.flash('list', error);
+        res.redirect('/user/user_profile');
+      }
+      if(!error){
+        //console.log("user added:"+user);
+        req.flash('user_profile', 'ticker added');
+        res.redirect('/user/user_profile');
+      }
+      
+      
+      })
+  }
+});
+
+
 
 
 // Performs logout functionality - it does nothing!
@@ -155,12 +189,26 @@ router.get('/user_profile', function(req, res) {
     req.flash('login', 'Not logged in');
     res.redirect('/user/login');
   }
+  
   else {
+    model.list(function(error,list){ 
+      console.log(list);
+    var result = list.filter(function( obj ) {
+        return obj.name==user.name;
+    });
+    
     res.render('user_profile', {
       title : 'User Profile',
-      sessionuser : user
+      sessionuser : user,
+      stocks: result[0].stocks
+      
+      
+      
+      
+    });
     });
   }
+  
 });
 
 module.exports = router;

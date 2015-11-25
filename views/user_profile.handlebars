@@ -4,19 +4,13 @@
 
 <ul>
   <li><br>Username:</br><strong>{{sessionuser.name}}</strong></li>
-  <p>Profile Image</p>
-  <img src={{sessionuser.img}} alt="User Profile Image" />
   <h1>Watchlist Items</h1>
-    {{#each sessionuser.watchlist}}
-      <br>Ticker:{{this.ticker}}</br>
-      <br>Company Name:{{this.companyname}}</br>
-      <br>Graph: 
-    {{/each}}
+      <br>Tickers:{{stocks}}</br>
   <p>
 <ul>
 
 <h4>Add a watchlist Item</h4>
-<form method="post" action="/admin/user">
+<form method="post" action="/user/tickeradd">
   Ticker: <input type="text" name="ticker"> <br>
     <br>
   <button>Add Ticker</button>
