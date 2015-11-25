@@ -76,3 +76,6 @@ This application is intended for the at home investor who is looking to maximize
   * The database stores information related to a user's account (name, password, image, admin, stocks). All the data
   that must be stored can be found in (https://github.com/mtmahone/326_Team_Project/blob/master/lib/user.js). The relevant library
   for interacting with the MongoDB Database is the Mongoose library which allows for CRUD operations on our database.
+2. For read-only access to our database, please use mongo tools with URI: mongo ds055574.mongolab.com:55574/freedb -u <dbuser> -p <dbpassword>
+using user instructor and pass instructor, the relevant collection is the users collection. Listing users in the database can be done using
+db.users.find() from the mongo console.
