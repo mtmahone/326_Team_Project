@@ -82,18 +82,25 @@ router.get('/logout', function(req, res) {
   // If the client has a session, but is not online it
   // could mean that the server restarted, so we require
   // a subsequent login.
-  if (user && !online[user.name]) {
+  if (!user) {
+    req.flash('login', 'Not logged in');
+    res.redirect('/user/login');
+  }
+  else if (user && !online[user.name]) {
     delete req.session.user;
   }
   // Otherwise, we delete both.
-  else if (user) {
+  /*else if (user) {
     delete online[user.name];
     delete req.session.user;
+  }*/
+  else{
+    delete online[user.name];
+    delete req.session.user;
+    // Redirect to logout page
+    var message = req.flash('logout') || '';
+    res.render('logout', {title: 'User Logout'});
   }
-
-  // Redirect to logout page
-  var message = req.flash('logout') || '';
-  res.render('logout', { title   : 'User Logout'});
 });
 
 // Renders the main user view.
