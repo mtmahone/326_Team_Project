@@ -72,7 +72,7 @@ router.post('/auth', (req, res) => {
 //mirrors the add user route
 router.post('/tickeradd', (req, res) => {
   var userSessionObject = req.session.user;
-  var formVarsExist = typeof(req.body.ticker)!=undefined;
+  var formVarsExist = typeof(req.body.tickeradd)!=undefined;
   //2
   if (!userSessionObject) {
     req.flash('login', 'Not logged in');
@@ -89,7 +89,7 @@ router.post('/tickeradd', (req, res) => {
   }
   //6
   if(formVarsExist){
-    model.addStock(req.session.user,req.body.ticker,function(error, user) {
+    model.addStock(req.session.user,req.body.tickeradd,function(error, user) {
       if(error){
         req.flash('list', error);
         res.redirect('/user/user_profile');
@@ -97,6 +97,42 @@ router.post('/tickeradd', (req, res) => {
       if(!error){
         //console.log("user added:"+user);
         req.flash('user_profile', 'ticker added');
+        res.redirect('/user/user_profile');
+      }
+      
+      
+      })
+  }
+});
+
+//ticker removal
+router.post('/tickerremove', (req, res) => {
+  var userSessionObject = req.session.user;
+  var formVarsExist = typeof(req.body.tickerremove)!=undefined;
+  //2
+  if (!userSessionObject) {
+    req.flash('login', 'Not logged in');
+    res.redirect('/user/login');
+  }
+  //3
+  if (userSessionObject && !online[userSessionObject.name]) {
+    req.flash('login', 'Login Expired');
+    res.redirect('/user/login')
+  }
+  //5
+  if (userSessionObject && online[userSessionObject.name] && userSessionObject.admin) {
+    console.log(req.body);
+  }
+  //6
+  if(formVarsExist){
+    model.removeStock(req.session.user,req.body.tickerremove,function(error, user) {
+      if(error){
+        req.flash('list', error);
+        res.redirect('/user/user_profile');
+      }
+      if(!error){
+        //console.log("user added:"+user);
+        req.flash('user_profile', 'ticker removed');
         res.redirect('/user/user_profile');
       }
       

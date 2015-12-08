@@ -8,15 +8,32 @@
       <br>Tickers:{{stocks}}</br>
   <p>
 <ul>
+  <br>Watchlist Activity sourced from edulifeline</br>
  <iframe src="http://edulifeline.com/includes/stocks_widget/?presets={{stocks}}" height="322px" width="250px" frameborder="0" scrolling="0"></iframe>
+<p> Charts for each watchlist item: sourced from FinViz</p>
 
+{{#each stocks}}
+    <iframe src="http://finviz.com/chart.ashx?t={{this}}&ty=c&ta=1&p=d&s=l" height="340px" width="700px" frameborder="0" scrolling="0"></iframe>
+{{/each}}
 
+<p>Barchart Opinion Data</p>
+{{#each stocks}}
+    <script type="text/javascript" src="https://www.barchart.com/widget.js?uid=01b97098820e94adfd12089d6219409e&widgetType=bcopinion&widgetWidth=300&fontColor%5Blinks%5D=004376&font=1&symbol={{this}}&fields%5B%5D=name&fields%5B%5D=symbol&fields%5B%5D=last&fields%5B%5D=change&fields%5B%5D=pctchange&displayChars="></script>
+{{/each}}
 
+<p></p>
 <h4>Add a watchlist Item</h4>
 <form method="post" action="/user/tickeradd">
-  Ticker: <input type="text" name="ticker"> <br>
+  Ticker: <input type="text" name="tickeradd"> <br>
     <br>
   <button>Add Ticker</button>
+</form>
+<p></p>
+<h4>Remove a watchlist Item</h4>
+<form method="post" action="/user/tickerremove">
+  Ticker: <input type="text" name="tickerremove"> <br>
+    <br>
+  <button>Remove Ticker</button>
 </form>
 <p></p>
 <p></p>
