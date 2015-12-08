@@ -15,6 +15,7 @@ This application is intended for the at home investor who is looking to maximize
 
  1. To clone repo: `git clone https://github.com/mtmahone/326_Team_Project.git`
  2. Execute using: `node app.js` from the root of the project or using the provided run script `./runscript.sh`
+ 3. Use username `admin` with password `nimad` to get access to the application
 
 ##Libraries
 
