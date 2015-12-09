@@ -68,6 +68,59 @@ router.post('/auth', (req, res) => {
   }
 });
 
+//signup route for the login page - not fully implemented,
+//needs to add user to in memory db, and sync new user to the server.
+
+// Performs **basic** user authentication.
+router.post('/signup', (req, res) => {
+  // Grab the session if the user is logged in.
+  var user = req.session.user;
+
+  // Redirect to main if session and user is online:
+  if (user && online[user]) {
+    res.redirect('/user/main');
+  }
+  else {
+    // Pull the values from the form:
+    var signupname = req.body.signupname;
+    var signuppass = req.body.signuppass;
+
+    if (!signupname || !signuppass) {
+      req.flash('login', 'Couldnt sign-up with inputted credentials ');
+      res.redirect('/user/login');
+    }
+    else {
+      var userToAdd = { name :signupname, 
+                        pass: signuppass, 
+                        admin: false };
+                        
+      model.add(userToAdd, function(error, user) {
+        if (error) {
+          // Pass a message to login:
+          req.flash('login', error);
+          res.redirect('/user/login');
+        }
+        else {
+          // add the user to the map of online users:
+          online[user.name] = user;
+
+          // create a session variable to represent stateful connection
+          req.session.user = user;
+
+          // Pass a message to main:
+          req.flash('main', 'Sign-up successful, Welcome, start adding tickers to your user profile');
+          res.redirect('/user/main');
+        }
+      });
+    }
+  }
+});
+
+
+
+
+
+
 //a post route for ticker additions.
 //mirrors the add user route
 router.post('/tickeradd', (req, res) => {
