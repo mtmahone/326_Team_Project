@@ -97,7 +97,7 @@ router.post('/signup', (req, res) => {
       model.add(userToAdd, function(error, user) {
         if (error) {
           // Pass a message to login:
-          req.flash('login', error);
+          req.flash('login error:', error);
           res.redirect('/user/login');
         }
         else {
