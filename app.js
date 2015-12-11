@@ -18,6 +18,7 @@ var cookieParser = require('cookie-parser');
 
 // Morgan for server logging.
 var morgan = require('morgan');
+var favicon = require('serve-favicon');
 
 
 
@@ -54,6 +55,7 @@ app.set('view engine', 'handlebars');
 // directory this server is running in and append it to '/public'.
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/public/aboutpage'));
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 // The `testmw` function represents out testing middleware. We use
 // this in our views to conditionally include the Mocha and Chai
