@@ -80,3 +80,10 @@ This application is intended for the at home investor who is looking to maximize
 2. For read-only access to our database, please use mongo tools with URI: mongo ds055574.mongolab.com:55574/freedb -u <dbuser> -p <dbpassword>
 using user instructor and pass instructor, the relevant collection is the users collection. Listing users in the database can be done using
 db.users.find() from the mongo console.
+
+##Video Presentation:
+Project presentation:  https://youtu.be/5VwRU8Fm8OY
+
+Source code tutoril:   https://youtu.be/6kLa8ac4ebQ
+
+Application Demo:      https://youtu.be/qomAYXiPlnA
