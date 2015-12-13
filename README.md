@@ -81,9 +81,11 @@ This application is intended for the at home investor who is looking to maximize
 using user instructor and pass instructor, the relevant collection is the users collection. Listing users in the database can be done using
 db.users.find() from the mongo console.
 
-##Video Presentation:
-Project presentation:  https://youtu.be/5VwRU8Fm8OY
+##Video Presentations:
 
-Source code tutoril:   https://youtu.be/6kLa8ac4ebQ
+1.Project presentation:   https://youtu.be/5VwRU8Fm8OY
 
-Application Demo:      https://youtu.be/qomAYXiPlnA
+2.Source code tutorial:   https://youtu.be/6kLa8ac4ebQ
+
+3.Application Demo:       https://youtu.be/qomAYXiPlnA
+
