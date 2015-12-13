@@ -83,9 +83,9 @@ db.users.find() from the mongo console.
 
 ##Video Presentations:
 
-1.Project presentation:   https://youtu.be/5VwRU8Fm8OY
+1. Project presentation:   https://youtu.be/5VwRU8Fm8OY
 
-2.Source code tutorial:   https://youtu.be/6kLa8ac4ebQ
+2. Source code tutorial:   https://youtu.be/6kLa8ac4ebQ
 
-3.Application Demo:       https://youtu.be/qomAYXiPlnA
+3. Application Demo:       https://youtu.be/qomAYXiPlnA
 
